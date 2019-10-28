@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>local storage</h1>
+    <input type="text" value="item" id="item">
+    <input type="text" id="text"> <br><br>
+    <input type="button" name="add" id="add" value="add">
+    <input type="button" name="remove" id="remove" value="remove">
+    <input type="button" name="clear" id="clear" value="clear">
+    <label for="" id="value"> </label>
+    <script>
+        let arr=[];
+         document.getElementById("add").onclick = ()=>{
+        let s = document.getElementById("text").value;
+        let w = document.getElementById("item").value;
+        document.getElementById("value").innerHTML = "";
+        arr.push(s);
+         localStorage.setItem(w,JSON.stringify(arr));
+         let s1 =JSON.parse(localStorage.getItem(w,s[0]));
+         document.getElementById("value").innerHTML += s1;
+    }
+        document.getElementById("remove").onclick = ()=>{
+         localStorage.removeItem("item");
+         console.log("remove complete")
+    }
+        document.getElementById("clear").onclick = ()=>{
+         localStorage.clear("item");
+         // localStorage.remove("item"); // one item in the local storage 
+         console.log("remove complete")
+    }
+    </script>
+</body>
+</html>
