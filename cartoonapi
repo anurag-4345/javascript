@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: burlywood;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            background-color: cornflowerblue;
+            border-radius: 25px;
+        }
+
+        section {
+            width:700px;
+            border: 2px double beige;
+            background-image: linear-gradient(rgb(236, 67, 199),rgb(183, 67, 236));
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>welcome and display cartoon image</h1>
+    <section>
+            <div>
+                <label for="nameid">Enter you name</label>
+                <input type="text" name="name" id="nameid">
+            </div> <br>
+            <div>
+                <img src="bean.png" id="imgid" alt="">
+            </div><br>
+            <button >Click me</button>
+        </section>
+    </center>
+    <script src="jquery.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("button").click(function () {
+                const inputName = $("#nameid").val();
+                alert(inputName)
+            $("img").attr("src",`https://joeschmoe.io/api/v1/random${inputName}`)
+            })
+        })
+    </script>
+</body>
+
+</html>
