@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title id="titleId">Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <STYLE>
+        #btn-1 {
+            text-align: center;
+            width: 100%;
+            background-color: cornflowerblue;
+            color: white;
+            outline: none;
+            border: 2px double white;
+            font-size: 30px;
+        }
+
+        #btn-1:hover {
+            border: none;
+            background-color: gainsboro;
+            color: black;
+        }
+
+        #box {
+            margin: 20px;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            width: 400px;
+            height: 550px;
+            padding: 30px;
+            background-color: gainsboro;
+        }
+
+        .registration {
+            float: left;
+            position: relative;
+
+        }
+
+        .login {
+            position: absolute;
+        }
+
+        input {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        label {
+            padding: 20px 20px;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #login-img {
+            height: 550px;
+            left: 600px;
+            position: absolute;
+        }
+
+        #reg-img {
+            left: 430px;
+            top: 100px;
+            position: absolute;
+        }
+    </STYLE>
+</head>
+
+<body>
+    <form action="" name="formName">
+        <div>
+            <button id="btn-1">Login</button>
+
+            <div class="login" id="box">
+                <h2><a href="#">Login </a> </h2>
+                <hr>
+                <label for="lName">Name</label>
+                <input type="text" name="name" id="lName"><br>
+                <label for="lEmail">Email Address</label>
+                <input type="email" name="email" id="lEmail"> <br>
+                <label for="lPass">password</label>
+                <input type="password" name="pass" id="lPass"> <br>
+                <input type="button" value="login">
+                <input type="button" value="forget password">
+            </div>
+            <div class="registration" id="box" name="formName">
+                <h2> <a href="#">Registration</a> </h2>
+                <hr>
+                <label for="rName">Name</label>
+                <input type="text" name="name" id="rName"><br>
+                <label for="rEmail">Email</label>
+                <input type="email" name="email" id="rEmail"> <br>
+                <label for="rMobile">Mobile</label>
+                <input type="number" name="phone" id="rMobile"><br>
+                <label for="rDate">Date of Birth</label>
+                <input type="date" name="data" id="rDate"><br>
+                <label for="testD">Test</label>
+                <select name="musicType" id="testD">
+                    <option selected> Blood test</option>
+                    <option> Medical test</option>
+                    <option> Physical examination</option>
+                    <option> Liver function tests</option>
+                    <option> X-ray</option>
+                    <option value="">other..</option>
+                </select><br>
+                <input type="button"
+                    onclick="alert('number of options selected: ' + howMany(document.formName.musicType))"
+                    value="registration">
+            </div>
+        </div>
+
+    </form>
+    <div>
+        <img src="img/direction.png" id="login-img" alt="" srcset="">
+        <img src="img/hand-shake.jpg " id="reg-img">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="script/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".registration").hide();
+            $("#reg-img").hide();
+            $("#btn-1").click(function () {
+                if ($(this).html() == "Login") {
+                    $("body").css("background-color", "white");
+                    $(this).html("Registration")
+                    $(".registration").fadeIn();
+                    $(".login").hide();
+                    $("#login-img").hide();
+                    $("#reg-img").show()
+                } else {
+                    $("body").css("background-color", "cornflowerblue");
+                    $("#login-img").show();
+                    $("#reg-img").hide()
+                    $(".registration").hide();
+                    $(".login").fadeIn();
+                    $(this).html("Login");
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
