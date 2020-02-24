@@ -30,6 +30,28 @@
     <div id="root"></div>
     <hr>
   
-    <script src="srcipt.js"></script>
+    <script>
+    var a =Array.from(document.getElementsByTagName("a"));
+    let newArray = []
+for(var i =0; i<a.length; i++){
+    if(!a[i].text == " "){
+        newArray[i]=a[i]
+    }
+}
+newArray = newArray.filter((e)=>{
+    return e != null
+})
+var date = document.getElementById("root")
+date.innerHTML = `${newArray}`
+
+var  imgV = document.getElementById("imgD").children;
+ 
+var imgS = document.getElementById("imgS")
+imgF= (i) =>{
+    imgS.src = imgV[i].src;
+}
+
+
+    </script>
 </body>
 </html>
