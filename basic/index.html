@@ -3,55 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Title</title>
+    <title>Task maker</title>
+    <style>
+        #btn2{
+            visibility: hidden;
+        }
+    </style>
 </head>
-<body> 
-    <h1>select and check</h1>
-    <!--only select elements with text on link -->
-    <a href="http://we1">we1</a>
-    <a href="http://we2"></a>
-    <a href="http://we3">we3</a>
-    <a href="http://we4"></a>
-    <a href="http://we5">we5</a>
-    <a href="http://we6">we6</a>
-    <a href="http://we7">we7</a>
-    <a href="http://we8">we8</a>
-    <a href="http://we9">we9</a>
-    <a href="http://we10">we10</a>
-    <hr>
-    <img src="./img/1.jpg" id="imgS" alt="image missing" height="310px" width="490px">
-    <hr>
-    <div id="imgD">
-    <img src="./img/1.jpg" height="100px" onclick="imgF(0)">
-    <img src="./img/4.jpg" height="100px" onclick="imgF(1)">
-    <img src="./img/5.jpg"  height="100px" onclick="imgF(2)">
+<body>
+    <div>
+        <input type="text" name="task" id="inputId" value="Task">
+        <input type="button" id="btn" value="Add">
+        <input type="button" id="btn2" value="Del">
+        <hr>
+
+        <ol id="taskBox">
+            <li class="long">task 1</li>
+        </ol>
     </div>
-    <hr>
-    <div id="root"></div>
-    <hr>
-  
-    <script>
-    var a =Array.from(document.getElementsByTagName("a"));
-    let newArray = []
-for(var i =0; i<a.length; i++){
-    if(!a[i].text == " "){
-        newArray[i]=a[i]
-    }
-}
-newArray = newArray.filter((e)=>{
-    return e != null
-})
-var date = document.getElementById("root")
-date.innerHTML = `${newArray}`
-
-var  imgV = document.getElementById("imgD").children;
- 
-var imgS = document.getElementById("imgS")
-imgF= (i) =>{
-    imgS.src = imgV[i].src;
-}
-
-
-    </script>
+    <script src="./scrpt.js"></script>
 </body>
 </html>
