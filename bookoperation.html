@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var bookList = ["all_is_good", "red_book", "green_book"];
+        var issueBooks = [];
+        var userName = [];
+        class book {
+            createUser(user) {
+                this.user = user;
+                userName.push(user);
+                return `${this.user} is new User`
+            }
+            getBookList(bookName) {
+                if (bookName == undefined) {
+                    return bookList
+                } else {
+                    this.book = bookName;
+                    bookList.push(this.book);
+                    return bookList;
+                }
+            }
+            issueBook(bookName, user) {
+                let flag = 1;
+                for (let i = 0; i < userName.length; i++) {
+                    if (userName[i] == user) {
+                        flag = 0;
+                        }
+                    }
+                        for (let i = 0; i < bookList.length; i++) {
+                            if (bookList[i] == bookName && flag == 0) {
+                                flag = 1;
+                                issueBooks.push(bookName);
+                                return `${bookName} issue form ${user}`
+                            }
+                        }
+                        if(flag == 1){
+                            return `${user} not found in user list`
+                        }else{
+                            return `${bookName} not found in book list`
+                        }
+            }
+            returnBook(bookName, user) {
+                this.book = bookName
+                let flag = 1
+                for (let i = 0; i < issueBooks.length; i++) {
+                    if (bookName == issueBooks[i]) {
+                        issueBooks.splice(bookName,1);
+                        flag =0
+                    }
+                }
+                if(flag == 0 ){
+                    return "thanks"
+                }else{
+                    return "please return right book"
+                }
+            }
+        }
+        ramBook = new book();
+        ramBook.getBookList();
+    </script>
+</body>
+
+</html>
