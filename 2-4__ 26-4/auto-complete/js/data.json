@@ -1,0 +1,52 @@
+[
+    {
+        "name":"anurag",
+        "lastName": "thakur",
+        "rollNo":200
+    },
+    {
+        "name":"neha",
+        "lastName": "sherma",
+        "rollNo":202
+    },
+    {
+        "name":"Rohit",
+        "lastName": "taker",
+        "rollNo":204
+    },
+    {
+        "name":"Mohit",
+        "lastName": "verma",
+        "rollNo":205
+    },
+    {
+        "name":"annu",
+        "lastName": "kumar",
+        "rollNo":206
+    },
+    {
+        "name":"ashish",
+        "lastName": "thakur",
+        "rollNo":208
+    },
+    {
+        "name":"jatin",
+        "lastName": "verma",
+        "rollNo":210
+    },
+    {
+        "name":"kapil",
+        "lastName": "Rana",
+        "rollNo":212
+    },
+    {
+        "name":"vikash",
+        "lastName": "khasyap",
+        "rollNo":214
+    },
+    {
+        "name":"sonu",
+        "lastName": "verma",
+        "rollNo":216
+    }
+]
