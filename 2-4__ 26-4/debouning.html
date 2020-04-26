@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>welcome Debouncing </h1>
+    <input type="text" onkeypress="Started()">
+
+    <script>
+    let counter = 0;
+    let getData = function () {
+        console.log('function run', counter++);
+    }
+
+    let Started = debouning(getData, 300);
+
+    function debouning(fun, limit) {
+        let timer;
+        return function () {
+            let context = this, args = arguments;
+            clearTimeout(timer);
+            console.log(context);
+            timer = setTimeout(() => {
+                fun.apply(context, args)
+            }, limit);
+        }
+    }
+
+
+    </script>
+</body>
+
+</html>

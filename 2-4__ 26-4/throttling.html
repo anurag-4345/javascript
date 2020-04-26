@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttle</title>
+</head>
+
+<body>
+
+    <script>
+        let counter = 1;
+        function expresive() {
+            console.log("function is runing", counter++);
+        }
+        let started = throttle(expresive, 300)
+
+        window.addEventListener("resize",started);
+        function throttle(func, limit) {
+            let flag = true;
+            return function () {
+                if (flag) {
+                    flag = false;
+                    let context = this, args = arguments;
+                    func.apply(context, arguments);
+                    setTimeout(() => {
+                        flag = true
+                    }, limit);
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
